@@ -11,8 +11,10 @@ endif
 
 sbin_PROGRAMS = ${prog}
 
-fping_SOURCES = fping.c seqmap.c socket.c socket4.c fping.h options.h seqmap.h
+fping_SOURCES = fping.c seqmap.c socket.c socket4.c cJSON.c fping.h options.h seqmap.h cJSON.h
+fping_LDADD = -lm
 fping_DEPENDENCIES = ../config.h
-fping6_SOURCES = fping.c seqmap.c socket.c socket6.c fping.h options.h seqmap.h
+fping6_SOURCES = fping.c seqmap.c socket.c socket6.c cJSON.c fping.h options.h seqmap.h cJSON.h
+fping6_LDADD = -lm
 fping6_DEPENDENCIES = ../config.h
 fping6_CFLAGS = $(AM_CFLAGS) -DIPV6

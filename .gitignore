@@ -1,6 +1,7 @@
 .*.swp
 *.tar.gz
 *~
+start.sh
 src/*.gcno
 src/*.gcda
 src/*.gcov

@@ -318,7 +318,7 @@ typedef struct vps_rtt_ctx {
     int rtt;
 } vps_rtt_ctx_t;
 
-static vps_rtt_ctx_t vps_rtt_result[32];
+static vps_rtt_ctx_t vps_rtt_result[64];
 static int vps_count = 0;
 
 /*** forward declarations ***/
@@ -2572,7 +2572,7 @@ void send_vps_rtt()
     struct sockaddr_un svaddr, claddr;
     int sfd = -1;
     size_t msgLen = 0;
-    char resp[4096];
+    char resp[1024*8];
     sfd = socket(AF_UNIX, SOCK_DGRAM, 0);
     if (sfd == -1) {
         perror("socket");
